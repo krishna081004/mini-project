@@ -1,0 +1,118 @@
+.home_start{
+    background-repeat: no-repeat;
+    background-image: url("./bike_home.jpg") ;
+}
+
+.nav-link{
+    padding-top: 12px;
+    padding-bottom: 0px;
+    color: black;
+}
+
+.nav-bar{
+    padding-right: 25px;
+    width: 100%;
+    position: fixed;
+    padding-left: 100px;
+    height: 80px;
+}
+
+.navbar-fixed{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-item:hover{
+    border-radius: 8px;
+    padding-bottom: 0px;
+    color: green;
+    background-color: yellow;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.main_head{
+    margin-bottom: 40px;
+    font-size: 52px;
+    color: black;
+}
+
+.shop_btn{
+    width: 150px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: rgb(169, 192, 89);
+}
+
+.bike{
+    margin-top: 30px;
+    margin-right: 40px;
+    width: 300px;
+    height: 350px;
+    border: 1px gray solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+.container{
+    display: flex;
+}
+
+.bike_name{
+    padding-top: 30px;
+    size: 20px; 
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.image{
+    padding-left: 10px;
+    width: 100%;
+    height: 50%;
+}
+
+.available{
+    text-align: center;
+    padding-top: 10px;
+    opacity: 0.5;
+    margin-bottom: 0px;
+}
+
+.available_at{
+    text-align: center;
+    opacity: 0.8;
+
+}
+
+hr{
+    opacity: 0.3;
+    margin-bottom: 0;
+}
+
+footer{
+    padding-top: 30px;
+    background-color: lightslategrey;
+}
+
+.fixed{
+    background-color: lightgrey;
+    margin-bottom: 0px !important;
+}
+
+.text-center{
+    margin-top: 16px;
+}
+
+.product {
+    overflow-x: auto; 
+    margin-left: 40px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .menu-container {
+      width: 300px;
+      height: 60px; /* Fixed height */
+      overflow: hidden; /* Hide overflow */
+    }
+
+    .menu-items {
+      height: 90px; /* Enlarge height to create space for hidden scrollbar */
+      padding: 5px;
+      white-space: nowrap; /* Keep items in a single line */
+      overflow-x: scroll; /* Enable horizontal scrolling */
+      overflow-y: hidden; /* Hide vertical scrollbar */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    }
+
+    .menu-item {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <div class="menu-items">
+      <div class="menu-item">Home</div>
+      <div class="menu-item">News</div>
+      <!-- Add more menu items here -->
+    </div>
+  </div>
+
+  <h2>Horizontal Scrollable Menu</h2>
+  <p>Resize the browser window to see the effect.</p>
+</body>
+</html>

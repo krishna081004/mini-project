@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>RideRevive Rentals</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/home.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+      /* From Here */
+
+
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      input[type="date"],input[type="time"] {
+        width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+
+      /* Upto here */
+        .textbox{
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid #ebeef3;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+        .password-container {
+            position: relative;
+        }
+        .textbox {
+            padding-right: 30px; 
+        }
+        .eye-icon {
+            position: absolute;
+            top: 50%;
+            right: 5px; 
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .divider {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-bar{
+            padding-right: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            padding-left: 100px;
+            z-index: 1;
+        }
+
+        .divider::before, .divider::after {
+            flex: 1;
+            content: '';
+            size: 200px;
+            padding: 1px;
+            background-color: gray;
+            margin: 5px;
+        }
+
+        .navbar-fixed{
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .card{
+          border-radius: .75rem;
+          background: #fff;
+          box-shadow: 0 0 8px #70707033;
+        }
+    </style>
+</head>
+<body class = "background">
+  <main>
+    <div class=" nav-bar" id="nav-bar">
+        <header class="d-flex flex-wrap justify-content-center mt-3">
+          <a href="./home.html" class="d-flex align-items-center  mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="./assets/RideRevive Rentals_transparent.png" width="200px" class="bi me-2" alt="Logo">
+        </a>        
+    
+          <ul class="nav nav-pills " >
+            <li class="nav-item"><a href="./home.html" class="nav-link" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
+            <li class="nav-item"><a href="./product.html" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="./user_signin.html" class="nav-link" id="log_in">Log In</a></li>
+            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link" id="sign_up">Sign Up</a></li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">portfolio</a></li>
+          </ul>
+        </header>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <div class="card" style="width: 800px; height: 250px;margin-top: 100px; margin-left: 50px;display: flex;">
+              <div>
+                <img id="img1" src="" alt=""  style="float: left;width:300px;padding-right: 30px;padding-top: 20px;">
+                <div >
+                  <h3 id="head1" style="margin-top: 50px;"></h3>
+                  <hr>
+                  <p style="font-size: small;font-weight: 400;">Note: The image is for representation purpose only. The actual colour of the vehicle may differ.</p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td rowspan="2">
+            <div class="card" style="width: 600px; height: 650px;margin-top: 100px; margin-left: 50px;display: flex;">
+              <div style="padding: 20px;">
+                <h3>Detailed Bill</h3>
+                <span>Includes all taxes (subject to vehicles fare rules)</span>
+                <table>
+                  <tr>
+                    <td ><p style="width: 400px;font-size:x-large ;padding-top: 20px;margin-bottom: 0px;">Vehicle Rental Cost</p></td>
+                    <td><b id="vrcost" style="width: 100px;font-size:x-large ;padding-top: 20px;padding-left: 40px;"></b></td>
+                  </tr>
+                  <tr>
+                    <td><span>(Rent is shown for 4 hrs)</span></td>
+                  </tr>
+                  <tr>
+                    <td ><p style="width: 400px;font-size:x-large ;padding-top: 20px;">Total Hours</p></td>
+                    <td><b id="hours" style="width: 100px;font-size:x-large ;padding-top: 20px;padding-left: 40px;"></b></td>
+                  </tr>
+                  <tr>
+                    <td ><p style="width: 400px;font-size:x-large ;padding-top: 20px;">Refundable Security Deposit</p></td>
+                    <td><b style="width: 100px;font-size:x-large ;padding-top: 20px;padding-left: 40px;">₹500</b></td>
+                  </tr>
+                  <tr>
+                    <td ><p style="width: 400px;font-size:x-large ;padding-top: 20px;">Total Booking Cost</p></td>
+                    <td><b id="tcost" style="width: 100px;font-size:x-large ;padding-top: 20px;padding-left: 40px;"></b></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div style="display: flex;margin-top: 20px;">
+                        <input type="checkbox" name="accept" id="accept" style="width: 20px;">
+                        <label for="accept" style="padding-left: 10px;" onclick="check()">Confirm that you are above 18 years of age and you agree to all <a href="./terms.html">Terms and Conditions</a></label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <button id="btn" style="width: 100%;margin-top: 20px;border-radius: 20px;padding: 10px;background-color: yellow;font-size: x-large;" onclick="pay()" disabled>Proceed to pay</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card" style="width: 800px; height: 370px;margin-top: 30px; margin-left: 50px;display: flex; padding: 20px;">
+              <h3 class="pb-2">Rental Duration</h3>
+              <h4><i class="fa fa-location-arrow"></i> Pickup & Drop Point</h4>
+              <p style="margin: 0;padding: 0;padding-left: 25px;">Hanuman Temple, Plot No. 21, Hanuman Temple Rd, Near Miyapur Cross Road, Balaji Nagar, Miyapur, Hyderabad, Telangana 500049</p>
+              <table style="margin-top:15px ;">
+                <tr>
+                  <td><h5><i class="fa fa-circle" style="color: red;"></i> Pickup</h5></td>
+                  <td>
+                    <label for="pickupDate">Pickup Date:</label>
+                    <input type="date" id="pickupDate" name="pickupDate" min="" required>
+                  </td>
+                  <td>
+                    <label for="pickupTime">Pickup Time:</label>
+                    <input type="time" id="pickupTime" name="pickupTime" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td><h5><i class="fa fa-circle" style="color: green;"></i> Drop</h5></td>
+                  <td>
+                    <label for="dropDate">Drop Date:</label>
+                    <input type="date" id="dropDate" name="dropDate" min="" required>
+                  </td>
+                  <td>
+                    <label for="dropoffTime">Drop-off Time:</label>
+                    <input type="time" id="dropoffTime" name="dropoffTime" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td style="padding-left: 200px;padding-top: 10px;">
+                    <button class="card p-2 px-3" style="width: 100px;background-color: rgb(154, 154, 188);" onclick="calculate()">Calculate</button>
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card p-3" style="width: 800px; height: 200px;margin-top: 30px; margin-left: 50px;display: flex;">
+              <table>
+                <tr>
+                  <td style="width: 400px;"><i class="fa fa-money"></i> <b style="font-size: larger; font-weight: 600;padding-left: 5px;"> Security Deposit</b></td>
+
+                  <td><i class="fa fa-road"></i> <b style="font-size: larger;  font-weight: 600;padding-left: 5px;">Distance</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <b style="font-size: larger; font-weight: 600;padding-left: 5px;">₹ 200</b>
+                  </td>
+                  <td>
+                    <span>Till 75 KM - <b style="font-size: larger; font-weight: 600;padding-left: 5px;">Free  <span style="color: red;">(Fuel not included)</span></b></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>(Refundable)</span></td>
+                  <td><span>Extra KM - <b style="font-size: larger; font-weight: 600;padding-left: 5px;">₹ 3/KM </b></span></td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div class="card" style=" height: 200px;margin-top: 30px; margin-left: 50px;display: flex;">
+              <div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+    </main>
+    
+    <footer class="pt-5 px-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <img src="./assets/RideRevive Rentals_transparent.png" width="150px" alt="">
+          <!-- <p>Driving Dreams, Delivering Value: Your Trusted Bike Partner for Quality, Service, and Satisfaction. Where Every Mile Feels Like Home.
+          </p> -->
+          <p >Contact</p >
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">Phone : +91 8367679899</li>
+            <li class="nav-item mb-2">Email : Pkrishnakanth08@gmail.com</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <p >Quick Links</p >
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Products</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <p >Policies</p >
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="./privacy_policy.html" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="./terms.html" class="nav-link p-0 text-body-secondary">Terms and Conditions</a></li>
+            <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <p >Subscribe to our newsletter</p >
+            <p>Monthly digest of new bikes and offers.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Enter your Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="fixed mx-auto py-4 my-4 border-top">
+        <p class="text-center text-body-secondary">Made with ❤️ by team RideRevive  </p>
+      </div>
+    </footer>
+
+
+    <script>
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("nav-bar").classList.add("navbar-fixed");
+        } else {
+          document.getElementById("nav-bar").classList.remove("navbar-fixed");
+        }
+      }
+
+      function signup(){
+        window.location.href = "./user_signup.html"
+      }
+
+      function getParameterByName(name) {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+      var id = getParameterByName('id');
+      var cost = 0;
+      var costhr = 0;
+      var img1 = document.getElementById("img1")
+      var head1 = document.getElementById("head1")
+      var vrcost = document.getElementById("vrcost")
+      switch(id){
+        case "1" : img1.src = "./css/KTM_DUKE_200.webp"
+                    head1.innerText = "KTM DUKE 200"
+                    vrcost.innerText = "₹500"
+                    costhr = 500
+                    break;
+        case "2" :  img1.src = "./css/KTM_ADVEN_250.webp"
+                    head1.innerText = "KTM ADVENTURE 200"
+                    vrcost.innerText = "₹650"
+                    costhr = 650
+                    break;
+        case "3" :  img1.src = "./css/KTM_RC_125.webp"
+                    head1.innerText = "KTM RC 125"
+                    vrcost.innerText = "₹450"
+                    costhr = 450
+                    break;
+        case "4" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹600"
+                    costhr = 600
+                    break;
+        case "5" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹700"
+                    costhr = 700
+                    break;
+        case "6" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹580"
+                    costhr = 580
+                    break;
+        case "7" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹580"
+                    costhr = 580
+                    break;
+        case "8" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹580"
+                    costhr = 580
+                    break;
+        case "9" :  img1.src = "./css/KTM_RC_390.webp"
+                    head1.innerText = "KTM RC 390"
+                    vrcost.innerText = "₹580"
+                    costhr = 580
+                    break;
+      }
+
+      const currentDate = new Date().toISOString().split('T')[0];
+      document.getElementById('pickupDate').min = currentDate;
+      document.getElementById('dropDate').min = currentDate;
+
+      function calculate(){
+        var pickupdate = document.getElementById("pickupDate").value
+        var dropdate = document.getElementById("dropDate").value
+        var pickuptime = document.getElementById("pickupTime").value
+        var dropofftime = document.getElementById("dropoffTime").value
+         console.log(pickuptime)
+        console.log(pickupdate+" "+dropdate +" "+pickuptime+" "+dropofftime)
+        // pickupdate = pickupdate.split("-")
+        // pickuptime = pickuptime.split(":")
+        // dropdate = dropdate.split("-")
+        // dropofftime = dropofftime.split(":")
+        const pickupDateTime = new Date(`${pickupdate}T${pickuptime}`);
+        const dropDateTime = new Date(`${dropdate}T${dropofftime}`);
+        var thrs = 0;
+        var tcost = 0;
+        var timeDifference = dropDateTime - pickupDateTime;
+        if (timeDifference == "NaN" || pickupdate == "" || dropdate == "" || dropofftime =="" || pickuptime == "") {
+          alert("Please check date and time are entered correctly")
+          return;
+        }
+        if(timeDifference<=0){
+          alert("Drop time should be after pickup time")
+          return;
+        }
+        var hoursDifference = timeDifference / (1000 * 60 * 60);
+        hoursDifference = hoursDifference.toFixed(2)
+        document.getElementById("hours").innerText = hoursDifference
+        cost = hoursDifference * costhr / 4;
+        cost = cost + 500;
+        document.getElementById("tcost").innerText = cost
+
+        console.log(timeDifference) 
+      }
+
+      function pay(){
+        var pickupdate = document.getElementById("pickupDate").value
+        var dropdate = document.getElementById("dropDate").value
+        var pickuptime = document.getElementById("pickupTime").value
+        var dropofftime = document.getElementById("dropoffTime").value
+        // pickupdate = pickupdate.split("-")
+        // pickuptime = pickuptime.split(":")
+        // dropdate = dropdate.split("-")
+        // dropofftime = dropofftime.split(":")
+        const pickupDateTime = new Date(`${pickupdate}T${pickuptime}`);
+        const dropDateTime = new Date(`${dropdate}T${dropofftime}`);
+        var thrs = 0;
+        var tcost = 0;
+        var timeDifference = dropDateTime - pickupDateTime;
+        if (timeDifference == "NaN" || pickupdate == "" || dropdate == "" || dropofftime =="" || pickuptime == "") {
+          alert("Please check date and time are entered correctly")
+          return;
+        }
+        if(timeDifference<=0){
+          alert("Drop time should be after pickup time")
+          return;
+        }
+        if (cost == "") {
+          alert("Calculate the amount before proceeding to payment")
+          return;
+        }
+        var accept = document.getElementById("accept")
+        if(accept.checked){
+          payment()
+        }
+      }
+
+      function payment(){
+        var formData = {
+          cost: cost,
+        };
+        var queryString = Object.keys(formData).map(key => key + '=' + encodeURIComponent(formData[key])).join('&');
+        var newUrl = `./paid.html?${queryString}`;
+        window.location.href = newUrl;
+        event.preventDefault()        
+      }
+
+      function check(){
+        var accept = document.getElementById("accept")
+        var btn = document.getElementById("btn")
+        if (accept.checked) {
+          btn.disabled = true
+        }else{
+          btn.disabled = false
+        }
+      }
+
+
+    </script>
+</body>
+</html>
